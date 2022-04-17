@@ -3,32 +3,15 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Extend-luogu 投喂我们</title>
-		<style type="text/css">
-			@font-face {
-				font-family: shsbold;
-				src: url("SourceHanSans-Bold.woff");
-			}
-			@font-face {
-				font-family: shsheavy;
-				src: url("SourceHanSans-Heavy.woff");
-			}
-		</style>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/donate.css"/>
 		<link rel="stylesheet" type="text/css" href="css/common.css"/>
 		<link rel="icon" type="image/x-ico" href="img/logo.png"/>
 		<script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.1.1/jquery.min.js"></script>
 		<script src="js/night.js" type="text/javascript" charset="utf-8"></script>
-		<!-- <script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.1.1/jquery.min.js"></script> -->
-		<!-- <script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.1.1/jquery.min.js"></script>
-		<script type="text/javascript">
-			window.onload=function(){
-				hobj=$.ajax({url:"https://gitee.com/haraki/exlg/issues/I40K8Z"});
-				hc=hobj.responseText;
-				// hd=hc.search("///");
-				// log(hd);
-			}
-			
-		</script> -->
+		<script src="js/regtag.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
 		<div class="bgimg"></div>
@@ -45,11 +28,10 @@
 						<p class="monier-name">炎炎龙虾</p><br>
 						<p>https://yylx.tech</p>
 					</a>
-					
 				</li>
 				<li>
 					<a href="https://www.luogu.com.cn/user/361833" target="_blank">
-						<p class="monier-name">TheRedKiller_</p><br>
+						<p class="monier-name">MahouTsukai</p><br>
 						<p>https://www.luogu.com.cn/user/361833</p>
 					</a>
 				</li>
@@ -72,8 +54,12 @@
 					</a>
 				</li>
 			</ul>
+			<p class="txt-bt jrg">激活 badge！</p>
+			<span>您的洛谷 uid：</span><input type="text" placeholder="e.g. 100250"/><br/>
+			<span>您的激活码：</span><input type="text" placeholder="粘贴到这里"/><br/>
+			<span>您想要的 badge： </span><input type="text" placeholder="e.g. fx"/><br/>
+			<button onclick="fx()">激活！</button>
 		</div>
-		
 		<ul class="menuul">
 			<li>
 				<button class="exlg-bgcol-blue3 menu-but" onclick="window.location='index.html'">
@@ -81,26 +67,21 @@
 				</button>
 			</li>
 			<li>
-				<button class="exlg-bgcol-blue3 menu-but"  onclick="window.location='install.html'">
+				<button class="exlg-bgcol-blue3 menu-but" onclick="window.location='install.html'">
 					<p class="exlg-col-white">下载 & 食用指南</p>
 				</button>
 			</li>
-			<!-- <li>
-				<button class="exlg-bgcol-blue3 menu-but" onclick="window.location='update.html'">
-					<p class="exlg-col-white">更新日志</p>
-				</button>
-				</li> -->
 			<li>
 				<button class="exlg-bgcol-blue3 menu-but checked" onclick="window.location='donate.html'">
 					<p class="exlg-col-white">投喂我们</p>
 				</button>
-				</li>
+			</li>
 			<li>
 				<button class="exlg-bgcol-blue3 menu-but" onclick="window.location='contact.html'">
 					<p class="exlg-col-white">联系我们</p>
 				</button>
 			</li>
 		</ul>
-		<p class="exlg-col-grey maker-info">Made by Haraki.</p>
+		<p class="exlg-col-grey maker-info">Made by Haraki.<br><a target="_blank" href="https://beian.miit.gov.cn" class="exlg-col-grey">沪ICP备19004827号</a></p>
 	</body>
 </html>
