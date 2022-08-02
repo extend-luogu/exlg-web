@@ -96,3 +96,12 @@
 	-o-transition: background-color 0.5s;
 	background: #00a2e8;
 }
+
+code>span {
+	line-height: 1.3vw !important;
+	height: 1vw !important;
+}
+
+pre {
+	margin: 1em;
+}

@@ -55,10 +55,39 @@
 				</li>
 			</ul>
 			<p class="txt-bt jrg">激活 badge！</p>
-			<span>您的洛谷 uid：</span><input type="text" placeholder="e.g. 100250"/><br/>
-			<span>您的激活码：</span><input type="text" placeholder="粘贴到这里"/><br/>
-			<span>您想要的 badge： </span><input type="text" placeholder="e.g. fx"/><br/>
-			<button onclick="fx()">激活！</button>
+			<span>在浏览器内打开控制台（一般是 F12，点击 Console），输入一下代码，将 “你的激活码”、“你想要的 badge” 填入。</span>
+			<pre><code lang="javascript"><span></span>(async (code, text) => {
+<span>&emsp;</span>if (!confirm('出于各种原因，badge 只能对实名认证的用户注册，且 badge 注册以后不能更改用户。你确定要继续吗？'))
+<span>&emsp;&emsp;</span>return
+<span>&emsp;</span>console.log('开始注册')
+<span>&emsp;</span>await exlg.mod.execute('token')
+<span>&emsp;</span>console.log('成功生成 token')
+<span>&emsp;</span>GM.GM_xmlhttpRequest({
+<span>&emsp;&emsp;</span>url: 'https://exlg.piterator.com/badge/set',
+<span>&emsp;&emsp;</span>method: 'POST',
+<span>&emsp;&emsp;</span>headers: {
+<span>&emsp;&emsp;&emsp;</span>'Content-Type': 'application/json'
+<span>&emsp;&emsp;</span>},
+<span>&emsp;&emsp;</span>data: JSON.stringify({
+<span>&emsp;&emsp;&emsp;</span>token: exlg.sto['^token'].token,
+<span>&emsp;&emsp;&emsp;</span>uid: _feInjection.currentUser.uid,
+<span>&emsp;&emsp;&emsp;</span>activation: code,
+<span>&emsp;&emsp;&emsp;</span>data: {
+<span>&emsp;&emsp;&emsp;&emsp;</span>text
+<span>&emsp;&emsp;&emsp;</span>}
+<span>&emsp;&emsp;</span>}),
+<span>&emsp;&emsp;</span>onload(resp) {
+<span>&emsp;&emsp;&emsp;</span>const fetched = JSON.parse(resp.responseText)
+<span>&emsp;&emsp;&emsp;</span>if (fetched.status === 200)
+<span>&emsp;&emsp;&emsp;&emsp;</span>console.log('OK. 请手动刷新 badge 以查看效果，后续的修改可使用注册器。')
+<span>&emsp;&emsp;&emsp;</span>else
+<span>&emsp;&emsp;&emsp;&emsp;</span>console.warn(fetched.error)
+<span>&emsp;&emsp;</span>},
+<span>&emsp;&emsp;</span>onerror(err) {
+<span>&emsp;&emsp;&emsp;</span>console.warn(err)
+<span>&emsp;&emsp;</span>}
+<span>&emsp;</span>})
+<span></span>})('你的激活码', '你想要的 badge')</code></pre>
 		</div>
 		<ul class="menuul">
 			<li>
